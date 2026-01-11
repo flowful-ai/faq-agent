@@ -42,3 +42,6 @@ next-env.d.ts
 
 # blog draft
 BLOG_POST.md
+
+# claude
+.claude/
