@@ -9,17 +9,17 @@ const faqJsonSchema = {
   properties: {
     faqs: {
       type: "array",
-      description: "List of frequently asked questions and answers generated from the webpage",
+      description: "List of frequently asked questions and answers generated from the website",
       items: {
         type: "object",
         properties: {
           question: {
             type: "string",
-            description: "A natural question that users might ask about this webpage"
+            description: "A natural question that users might ask about this website"
           },
           answer: {
             type: "string",
-            description: "A comprehensive answer based on the webpage content"
+            description: "A comprehensive answer based on content gathered from the website"
           },
         },
         required: ["question", "answer"],
@@ -41,11 +41,11 @@ const faqZodSchema = z.object({
 
 export type FAQItem = { question: string; answer: string };
 
-const AGENT_PROMPT = `Visit and analyze this webpage to generate a comprehensive FAQ (Frequently Asked Questions) section.
+const AGENT_PROMPT = `Starting from the provided URL, explore this website to generate a comprehensive FAQ (Frequently Asked Questions) section.
 
-Navigate through the page content and extract key information to create natural questions that visitors would likely ask.
+Navigate through the website, following relevant links to gather information from multiple pages including the homepage, about page, pricing page, features page, and any other relevant sections.
 
-Cover these aspects if available:
+Create natural questions that visitors would likely ask, covering:
 - Core services or products offered
 - Pricing and plans
 - Contact information and support
@@ -54,7 +54,7 @@ Cover these aspects if available:
 - Company/brand information
 - How-to and getting started
 
-Generate 5-10 high-quality question-answer pairs. Write in the same language as the webpage. Make answers informative and actionable.`;
+Generate 5-10 high-quality question-answer pairs based on information gathered across the website. Write in the same language as the website. Make answers informative and actionable.`;
 
 /**
  * Server Action that uses Firecrawl /agent to generate FAQs.

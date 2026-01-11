@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { generateFAQ, type FAQItem } from "../app/actions/generateFAQ";
 import { LoaderButton } from "@/components/ui/LoaderButton";
 import { Input } from "@/components/ui/input";
@@ -195,10 +196,10 @@ export default function FAQForm({ apiKeyMissing }: FAQFormProps) {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-5 pb-4 pt-0 pl-16">
-                      <p className="text-gray-600 leading-relaxed">
+                    <div className="px-5 pb-4 pt-0 pl-16 prose prose-sm prose-gray max-w-none">
+                      <ReactMarkdown>
                         {faq.answer}
-                      </p>
+                      </ReactMarkdown>
                     </div>
                   </div>
                 </div>
