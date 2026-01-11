@@ -1,5 +1,7 @@
 # FAQ Generator
 
+![FAQ Generator Screenshot](screenshot.png)
+
 FAQs are essential for AI search visibility - pages with FAQ schema are **3.2x more likely** to appear in Google AI Overviews and other AI-powered search results.
 
 This tool uses [Firecrawl /agent](https://firecrawl.dev) to automatically generate structured FAQs from any webpage.
